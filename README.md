@@ -1,6 +1,6 @@
 # Reproducible research: version control and R
 
-\# INSERT ANSWERS HERE #
+The edit made to the code is shown below in the red square.
 
 ## Instructions
 
