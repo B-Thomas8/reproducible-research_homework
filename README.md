@@ -1,6 +1,9 @@
 # Reproducible research: version control and R
 
 The edit made to the code is shown below in the red square.
+<p align="center">
+     <img src="https://github.com/B-Thomas8/reproducible-research_homework/blob/main/edited_data.png" width="600" height="500">
+  </p>
 
 ## Instructions
 
