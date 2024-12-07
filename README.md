@@ -1,6 +1,19 @@
 # Reproducible research: version control and R
-***Questions 1-3*** https://github.com/B-Thomas8/logistic_growth/blob/dev/README.md 
-***Question 4***
+
+**Questions 1-3**: Answers found at: https://github.com/B-Thomas8/logistic_growth/blob/dev/README.md 
+
+**Question 4**:
+
+***A script for simulating a random walk is provided in the question-4-code folder of this repo. Execute the code to produce the paths of two random walks. What do you observe?***
+
+When applied for 500 steps, the random walk function produces a two-dimensional path, which starts at the coordinates at (0,0) and then proceeds in a series of randomly directed steps. The path is shaded to show its progression over the 500 steps. Although the same function and number of steps (500) are used to make the first and second paths, they are completely different. They both start at (0,0) but have different trajectories and endpoints. The paths appear to have no directional tendency and often cross back over themselves. They have a jagged shape, where the paths appear to move in a new, random direction after every step. Also, if the code is run again, it produces two completely new paths. This shows how the function is producing a new, random path of 500 steps every time it’s run. 
+
+***Investigate the term random seeds. What is a random seed and how does it work?***
+
+Random seeds are the initial values used in pseudorandom number generators, which initiate the generator to produce a series of random numbers. Pseudorandom number generators work by performing an operation on the previous value, meaning an initial ‘seed’ value is needed to start the sequence. Usually, the current time of the system is used as a random seed, but it can be customised. The reason number generators are ‘pseudorandom’ is because they are determined by the seed. Therefore, if the same seed is used, the same sequence of ‘random’ numbers will be produced. This means simulations can be made reproducible by setting the random seed as a given number.  
+
+***Show the edit you made to the code in the comparison view.***
+
 The edit made to the code is shown below in the red square.
 <p align="center">
      <img src="https://github.com/B-Thomas8/reproducible-research_homework/blob/main/edited_code.png" width="600" height="500">
