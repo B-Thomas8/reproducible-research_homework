@@ -1,5 +1,5 @@
 # Reproducible research: version control and R
-
+***Questions 1-3*** https://github.com/B-Thomas8/logistic_growth/blob/dev/README.md 
 ***Question 4***
 The edit made to the code is shown below in the red square.
 <p align="center">
