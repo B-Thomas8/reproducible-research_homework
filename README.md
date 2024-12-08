@@ -10,7 +10,7 @@ When applied for 500 steps, the random walk function produces a two-dimensional 
 
 ***Investigate the term random seeds. What is a random seed and how does it work?***
 
-Random seeds are the initial values used in pseudorandom number generators, which initiate the generator to produce a series of random numbers. Pseudorandom number generators work by performing an operation on the previous value, meaning an initial ‘seed’ value is needed to start the sequence. Usually, the current time of the system is used as a random seed, but it can be customised. The reason number generators are ‘pseudorandom’ is because they are determined by the seed. Therefore, if the same seed is used, the same sequence of ‘random’ numbers will be produced. This means simulations can be made reproducible by setting the random seed as a given number.  
+Pseudorandom number generators work by performing an operation on the previous value, meaning an initial ‘seed’ value is needed to start the sequence. The term 'random seeds' refers to these initial values which initiate the generator to produce a series of random numbers. Usually, the current time of the system is used as a random seed, but it can be customised. The reason the number generators are ‘pseudorandom’ is because they are determined by the seed. Therefore, if the same seed is used, the same sequence of ‘random’ numbers will be produced. This means simulations can be made reproducible by setting the random seed as a given number.  
 
 ***Show the edit you made to the code in the comparison view.***
 
