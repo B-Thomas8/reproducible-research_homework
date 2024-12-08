@@ -1,6 +1,6 @@
 # Reproducible research: version control and R
 
-**Questions 1-3**: Answers found at: https://github.com/B-Thomas8/logistic_growth/blob/dev/README.md 
+**Questions 1-3**: Answers found at: https://github.com/RT751/logistic_growth/blob/dev/README.md 
 
 **Question 4**:
 
@@ -16,7 +16,7 @@ Pseudorandom number generators work by performing an operation on the previous v
 
 The edit made to the code is shown below in the red square.
 <p align="center">
-     <img src="https://github.com/B-Thomas8/reproducible-research_homework/blob/main/edited_code.png" width="600" height="500">
+     <img src="https://github.com/RT751/reproducible-research_homework/blob/main/edited_code.png" width="600" height="500">
   </p>
 
 ## Instructions
