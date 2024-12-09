@@ -1,6 +1,6 @@
 # Reproducible research: version control and R
 
-**Questions 1-3**: Answers found at: https://github.com/RT751/logistic_growth/blob/dev/README.md 
+**Questions 1-3**: Answers found at: https://github.com/RT751/logistic_growth/blob/main/README.md 
 
 **Question 4**:
 
@@ -18,6 +18,49 @@ The edit made to the code is shown below in the red square.
 <p align="center">
      <img src="https://github.com/RT751/reproducible-research_homework/blob/main/edited_code.png" width="600" height="500">
   </p>
+
+
+**Question 5**
+***Import the data for double-stranded DNA (dsDNA) viruses taken from the Supplementary Materials of the original paper into Posit Cloud (the csv file is in the question-5-data folder). How many rows and columns does the table have?***
+
+The table has 33 rows and 13 columns. 
+
+***What transformation can you use to fit a linear model to the data?
+Apply the transformation.***
+
+A log transformation can be used to fit a linear model to this data. 
+
+***Find the exponent (β) and scaling factor (α) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values?***
+
+The allometric relationship between virion volume and genome length is described by the equation $`V = \alpha L^{\beta}`$, where V is virion volume ($nm^{3}$), L is genome length (kb), $\alpha$ is the scaling factor, and $\beta$ is the exponent. This can be transformed into a linear equation by taking the natural log, resulting in the equation: $lnV = ln\alpha + \beta lnL$. The linear model produced using the log-transformed data corresponds to this equation. So, in the output from the linear model of the log-transformed data, the intercept is $ln\alpha$  and the slope (log_length estimate) is $\beta$. According to the output of my model, the exponent ($\beta$) is 1.5152 and the scaling factor ($\alpha$) is $e^{7.0748}$ = 1181.807116. This is equal to the results found in the article (reported as 1.52 and 1182). The p-values from the model are $2.27 * 10^{-10}$ for the intercept estimate and $6.44*10^{-10}$ for the slope estimate. These are both much smaller than 0.01, suggesting the results are statistically significant. 
+
+***Write the code to reproduce the figure shown below.***
+
+```
+ggplot(aes(log_length, log_vol), data = transformed_data) +
+  geom_point()+
+  xlab("log[Genome length (kb)]") +
+  ylab("log[Virion volume(nm3)]") +
+  theme_linedraw() +
+  geom_smooth(method = "lm") +
+  theme(axis.title = element_text(face="bold"))
+```
+
+***What is the estimated volume of a 300 kb dsDNA virus?***
+
+$V = \alpha  L^{\beta}$
+
+$\alpha = 1181.807116$
+
+$L = 300$
+
+$\beta = 1.5152$
+
+$V = (1181.807116)(300)^{1.5152}$
+
+$V = 6697006.583$ kb
+
+
 
 ## Instructions
 
