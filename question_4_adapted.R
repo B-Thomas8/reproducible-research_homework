@@ -55,3 +55,8 @@ plot2 <- ggplot(aes(x = x, y = y), data = data2) +
   ylab("y-coordinate")
 
 grid.arrange(plot1, plot2, ncol=2)
+
+#save packages
+sink(file = "package-versions-Q4.txt")
+sessionInfo()
+sink()
