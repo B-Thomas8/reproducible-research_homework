@@ -36,16 +36,14 @@ lm_log <- lm(log_vol~log_length, data = transformed_data)
 plot(lm_log)
 summary(lm_log)
 
-
 #reproduce figure
 ggplot(aes(log_length, log_vol), data = transformed_data) +
   geom_point()+
   xlab("log[Genome length (kb)]") +
   ylab("log[Virion volume(nm3)]") +
-  theme_minimal() +
+  theme_bw() +
   geom_smooth(method = "lm") +
-  theme(axis.title = element_text(face="bold"), 
-  panel.border = element_rect(colour = "black", fill=NA, linewidth=0.5))
+  theme(axis.title = element_text(face="bold"))
 
 #save packages
 sink(file = "package-versions-Q5.txt")
