@@ -51,10 +51,9 @@ ggplot(aes(log_length, log_vol), data = transformed_data) +
   geom_point()+
   xlab("log[Genome length (kb)]") +
   ylab("log[Virion volume(nm3)]") +
-  theme_minimal() +
+  theme_bw() +
   geom_smooth(method = "lm") +
-  theme(axis.title = element_text(face="bold"), 
-  panel.border = element_rect(colour = "black", fill=NA, linewidth=0.5))
+  theme(axis.title = element_text(face="bold"))
 ```
 
 ***What is the estimated volume of a 300 kb dsDNA virus?***
