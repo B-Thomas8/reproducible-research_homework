@@ -1,16 +1,16 @@
 # Reproducible research: version control and R
 
-**Questions 1-3**: Answers found at: https://github.com/RT751/logistic_growth/blob/main/README.md 
+**Questions 1-3**: Answers found at: https://github.com/RT751/logistic_growth/tree/main
 
 **Question 4**:
 
 ***A script for simulating a random walk is provided in the question-4-code folder of this repo. Execute the code to produce the paths of two random walks. What do you observe?***
 
-When applied for 500 steps, the random walk function produces a two-dimensional path which starts at the coordinates at (0,0) and then proceeds in a series of 500 randomly directed steps. The path is shaded to show its progression over the 500 steps. Although the same function and number of steps (500) are used to make the first and second paths, they are completely different. They both start at (0,0) but have different trajectories and endpoints. The paths appear to have no directional tendency and often cross back over themselves. They have a jagged shape, where the paths appear to move in a new, random direction after every step. Also, if the code is run again, it produces two completely new paths. This shows how the function is producing a new, random path of 500 steps every time it’s run. 
+When applied for 500 steps, the random walk function produces a two-dimensional path which starts at the coordinates at (0,0) and then proceeds in a series of 500 randomly directed steps. The path is shaded to show its progression over the 500 steps. Although the same function and number of steps (500) are used to make the first and second paths, they are completely different. They both start at (0,0) but have different trajectories and endpoints. The paths appear to have no directional tendency and often cross back over themselves. They have a jagged shape, where the paths appear to move in a new, random direction after every step. If the code is run again, it produces two completely new paths. This shows how the function is producing a new, random path of 500 steps every time it’s run. 
 
 ***Investigate the term random seeds. What is a random seed and how does it work?***
 
-Pseudorandom number generators produce random numbers by performing an operation on the previous value, meaning an initial value is needed to start the sequence. The term 'random seeds' refers to these initial values. Usually, the system's current time is used as a random seed, but it can be customised. The reason the number generators are ‘pseudorandom’ is because they are determined by the seed. Therefore, if the same seed is used, the same sequence of ‘random’ numbers will be produced. This means simulations can be made reproducible by setting the seed as a given number.  
+Pseudorandom number generators produce random numbers by performing an operation on the previous value generated in the series. This means an initial value, known as a random seed, is needed to start the sequence. Usually, the system's current time is used as a random seed, but it can be customised. The reason the number generators are ‘pseudorandom’ is because they are determined by the seed. Therefore, if the same seed is used, the same sequence of ‘random’ numbers will be produced. This means simulations can be made reproducible by setting the seed as a given number.  
 
 ***Show the edit you made to the code in the comparison view.***
 
@@ -18,6 +18,8 @@ The edit made to the code is shown below in the red square.
 <p align="center">
      <img src="https://github.com/RT751/reproducible-research_homework/blob/main/edited_code.png" width="900" height="500">
   </p>
+
+Code found at: https://github.com/RT751/reproducible-research_homework/blob/main/question_4_adapted.R
 
 
 **Question 5**
@@ -28,11 +30,11 @@ The table has 33 rows and 13 columns.
 
 ***What transformation can you use to fit a linear model to the data? Apply the transformation.***
 
-When plotted, the raw data do not appear to have a linear relationship, and the distributions of both variables are skewed to the right. In addition, when a linear model is produced with the raw data, the residuals vs fitted values plot shows that the residuals are not evenly distributed. A log transformation of both variables can be used to resolve this and fit a linear model to the data. When plotted, the log-transformed data appear to fit a linear relationship much better. Moreover, the linear model produced using log-transformed data has more evenly distributed residuals. 
+When plotted, the raw data do not appear to have a linear relationship, and the distributions of both variables are skewed to the right. In addition, when a linear model is produced with the raw data, the residuals violate the assumptions of homoscedasticity and normality. A log transformation of both variables can be used to resolve this and fit a linear model to the data. When plotted, the log-transformed data appear to fit a linear relationship much better. Moreover, the linear model produced using log-transformed data better meets the assumptions. 
 
 ***Find the exponent (β) and scaling factor (α) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values?***
 
-The allometric relationship between virion volume and genome length is described by the equation $`V = \alpha L^{\beta}`$, where V is virion volume ($nm^{3}$), L is genome length (kb), $\alpha$ is the scaling factor, and $\beta$ is the exponent. This can be transformed into a linear equation by taking the natural logarithm of both sides, resulting in the equation: $lnV = ln\alpha + \beta lnL$. The linear model produced using the log-transformed data corresponds to this equation. So, in the summary of the linear model of the log-transformed data, the intercept is $ln\alpha$  and the slope (log_length estimate) is $\beta$. According to the output of my model, the exponent ($\beta$) is 1.5152 and the slope ($ln\alpha$) is 7.0748. The scaling factor ($\alpha$) can be obtained by taking the exponential function of the slope estimate ($exp(7.0748)$ = 1181.807116). These values are the same as the results found in the paper (reported as 1.52 and 1182). The p-values from the model are $2.28 * 10^{-10}$ for the intercept estimate and $6.44*10^{-10}$ for the slope estimate. These are much smaller than 0.01, suggesting the results are statistically significant. 
+The allometric relationship between virion volume and genome length is described by the equation $`V = \alpha L^{\beta}`$, where V is virion volume ($nm^{3}$), L is genome length (kb), $\alpha$ is the scaling factor, and $\beta$ is the exponent. This can be transformed into a linear equation by taking the natural logarithm of both sides, resulting in the equation: $lnV = ln\alpha + \beta lnL$. The linear model produced using the log-transformed data corresponds to this equation. So, in the summary of the linear model of the log-transformed data, the intercept is $ln\alpha$  and the slope (log_length estimate) is $\beta$. According to the output of my model, the exponent ($\beta$) is 1.5152 and the natural logarithm of the scaling factor ($ln\alpha$) is 7.0748. The scaling factor ($\alpha$) can be obtained by taking the exponential function of the slope estimate ($exp(7.0748)$ = 1181.807116). These values are the same as the results found in the paper (reported as 1.52 and 1182). The p-values from the model are $2.28 * 10^{-10}$ for the intercept estimate and $6.44*10^{-10}$ for the slope estimate. These are much smaller than 0.01, suggesting the results are statistically significant. 
 
 ***Write the code to reproduce the figure shown below.***
 
@@ -51,10 +53,9 @@ ggplot(aes(log_length, log_vol), data = transformed_data) +
   geom_point()+
   xlab("log[Genome length (kb)]") +
   ylab("log[Virion volume(nm3)]") +
-  theme_minimal() +
+  theme_bw() +
   geom_smooth(method = "lm") +
-  theme(axis.title = element_text(face="bold"), 
-  panel.border = element_rect(colour = "black", fill=NA, linewidth=0.5))
+  theme(axis.title = element_text(face="bold"))
 ```
 
 ***What is the estimated volume of a 300 kb dsDNA virus?***
