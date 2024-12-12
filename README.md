@@ -1,6 +1,6 @@
 # Reproducible research: version control and R
 
-**Questions 1-3**: Answers found at: https://github.com/RT751/logistic_growth/blob/main/README.md 
+**Questions 1-3**: Answers found at: https://github.com/RT751/logistic_growth/blob/main
 
 **Question 4**:
 
