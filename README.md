@@ -19,6 +19,8 @@ The edit made to the code is shown below in the red square.
      <img src="https://github.com/RT751/reproducible-research_homework/blob/main/edited_code.png" width="900" height="500">
   </p>
 
+Code found at: https://github.com/RT751/reproducible-research_homework/blob/main/question_4_adapted.R
+
 
 **Question 5**
 
