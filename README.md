@@ -39,17 +39,20 @@ The allometric relationship between virion volume and genome length is described
 ***Write the code to reproduce the figure shown below.***
 
 ```
-#load data
+#load data and packages
 virus_data <- read.csv("Cui_etal2014.csv")
+#library(dplyr)
 
-#transform data and make linear model
-log_vol <- log(virus_data$Virion.volume..nm.nm.nm.)
-log_length <- log(virus_data$Genome.length..kb.)
-transformed_data <- data.frame(log_vol, log_length)
-lm_log <- lm(log_vol~log_length, data = transformed_data)
+
+#log transform both variables and make linear model
+log_data <- virus_data |>
+  mutate(log_vol = log(virus_data$Virion.volume..nm.nm.nm.)) |>
+  mutate(log_length = log(virus_data$Genome.length..kb.))
+lm_log <- lm(log_vol~log_length, data = log_data)
+
 
 #plot graph
-ggplot(aes(log_length, log_vol), data = transformed_data) +
+ggplot(aes(log_length, log_vol), data = log_data) +
   geom_point()+
   xlab("log[Genome length (kb)]") +
   ylab("log[Virion volume(nm3)]") +
