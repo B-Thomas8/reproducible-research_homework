@@ -1,5 +1,6 @@
-#load data
+#load data and packages
 virus_data <- read.csv("Cui_etal2014.csv")
+#library(dplyr)
 
 #calculate number of rows and columns in table
 ncol(virus_data)
@@ -23,21 +24,21 @@ summary(lm_model)
 plot(lm_model)
 
 
-#the distribution of both variables is right-skewed, so log transform data
-log_vol <- log(virus_data$Virion.volume..nm.nm.nm.)
-log_length <- log(virus_data$Genome.length..kb.)
-transformed_data <- data.frame(log_vol, log_length)
-ggplot(aes(log_vol, log_length), data = transformed_data) +
+#the distribution of both variables is right-skewed, so log transform both variables and add to data frame
+log_data <- virus_data |>
+  mutate(log_vol = log(virus_data$Virion.volume..nm.nm.nm.)) |>
+  mutate(log_length = log(virus_data$Genome.length..kb.))
+ggplot(aes(log_vol, log_length), data = log_data) +
   geom_point()
 
 
 #make linear model of log-transformed data to work out exponent and scaling factor
-lm_log <- lm(log_vol~log_length, data = transformed_data)
+lm_log <- lm(log_vol~log_length, data = log_data)
 plot(lm_log)
 summary(lm_log)
 
 #reproduce figure
-ggplot(aes(log_length, log_vol), data = transformed_data) +
+ggplot(aes(log_length, log_vol), data = log_data) +
   geom_point()+
   xlab("log[Genome length (kb)]") +
   ylab("log[Virion volume(nm3)]") +
