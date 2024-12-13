@@ -30,7 +30,7 @@ The table has 33 rows and 13 columns.
 
 ***What transformation can you use to fit a linear model to the data? Apply the transformation.***
 
-When plotted, the raw data do not appear to have a linear relationship, and the distributions of both variables are skewed to the right. In addition, when a linear model is produced with the raw data, the residuals violate the assumptions of homoscedasticity and normality. A log transformation of both variables can be used to resolve this and fit a linear model to the data. When plotted, the log-transformed data appear to fit a linear relationship much better. Moreover, the linear model produced using log-transformed data better meets the assumptions. 
+When plotted, the raw data does not appear to have a linear relationship, and the distributions of both variables are skewed to the right. In addition, when a linear model is produced with the raw data, the residuals violate the assumptions of homoscedasticity and normality. A log transformation of both variables can be used to resolve this and fit a linear model to the data. When plotted, the log-transformed data appears to fit a linear relationship much better. Moreover, the linear model produced using log-transformed data better meets the assumptions. 
 
 ***Find the exponent (β) and scaling factor (α) of the allometric law for dsDNA viruses and write the p-values from the model you obtained, are they statistically significant? Compare the values you found to those shown in Table 2 of the paper, did you find the same values?***
 
