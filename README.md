@@ -43,7 +43,7 @@ Code found at: https://github.com/RT751/reproducible-research_homework/blob/main
 ```
 #load data and packages
 virus_data <- read.csv("Cui_etal2014.csv")
-#library(dplyr)
+library(dplyr)
 
 
 #log transform both variables and make linear model
