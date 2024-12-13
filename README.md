@@ -10,7 +10,7 @@ When applied for 500 steps, the random walk function produces a two-dimensional 
 
 ***Investigate the term random seeds. What is a random seed and how does it work?***
 
-Pseudorandom number generators produce random numbers by performing an operation on the previous value generated in the series $^1$. This means an initial value, known as a random seed, is needed to start the sequence $^2$. Usually, the system's current time is used as a random seed, but it can be customised. The reason the number generators are ‘pseudorandom’ is because they are determined by the seed. Therefore, if the same seed is used, the same sequence of ‘random’ numbers will be produced. This means simulations can be made reproducible by setting the seed as a given number.  
+Pseudo random number generators produce random numbers by performing an operation on the previous value generated in the series $^1$. This means an initial value, known as a random seed, is needed to start the sequence $^2$. Usually, the system's current time is used as a random seed, but it can be customised. The reason the number generators are ‘pseudorandom’ is because they are determined by the seed. Therefore, if the same seed is used, the same sequence of ‘random’ numbers will be produced. This means simulations can be made reproducible by setting the seed as a given number.  
 
 ***Show the edit you made to the code in the comparison view.***
 
