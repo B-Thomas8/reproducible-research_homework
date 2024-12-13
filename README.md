@@ -36,6 +36,8 @@ When plotted, the raw data do not appear to have a linear relationship, and the 
 
 The allometric relationship between virion volume and genome length is described by the equation $`V = \alpha L^{\beta}`$, where V is virion volume ($nm^{3}$), L is genome length (kb), $\alpha$ is the scaling factor, and $\beta$ is the exponent. This can be transformed into a linear equation by taking the natural logarithm of both sides, resulting in the equation: $lnV = ln\alpha + \beta lnL$. The linear model produced using the log-transformed data corresponds to this equation. So, in the summary of the linear model of the log-transformed data, the intercept is $ln\alpha$  and the slope (log_length estimate) is $\beta$. According to the output of my model, the exponent ($\beta$) is 1.5152 and the natural logarithm of the scaling factor ($ln\alpha$) is 7.0748. The scaling factor ($\alpha$) can be obtained by taking the exponential function of the slope estimate ($exp(7.0748)$ = 1181.807116). These values are the same as the results found in the paper (reported as 1.52 and 1182). The p-values from the model are $2.28 * 10^{-10}$ for the intercept estimate and $6.44*10^{-10}$ for the slope estimate. These are much smaller than 0.001, suggesting the results are statistically significant. 
 
+Code found at: https://github.com/RT751/reproducible-research_homework/blob/main/question_5.R
+
 ***Write the code to reproduce the figure shown below.***
 
 ```
